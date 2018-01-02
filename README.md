@@ -8,7 +8,7 @@
 npm install
 gulp
 ```
-### Both the above methods will start hosting the app at http://localhost:3000 . Check the list of available APIs to know about the routes
+### The above will start hosting the app at http://localhost:3000 . Check the list of available APIs to know about the routes
 
 ## List of available APIs
 
