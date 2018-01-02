@@ -1,25 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const profController = require('./controllers/Professions-controller.js')
+const ImagesController = require('./controllers/Images-controller.js')
 
+router.route('/getImagesInfo')
+	.get(ImagesController.listImagesInfo)
 
-//Primary routes
-router.route('/getProfessionsWithRepetitions')
-    .get(profController.getProfessionsWithRepetitions)
+router.route('/deleteImage/:commitId')
+    .delete(ImagesController.removeDockerImage)
 
+router.route('/deleteTag/:tagName')
+	.delete(ImagesController.removeImageTag)
 
-router.route('/getProfessionsWithoutRepetitions')
-    .get(profController.getProfessionsWithoutRepetitions)
+router.route('/tagImage/:imageName/:tagName')
+	.post(ImagesController.newTagForImage)
 
-//Other fun routes
-router.route('/getRandomProfessions/:professions')
-    .get(profController.fetchRandomProfessions)
-
-router.route('/getTotalProfs')
-    .get(profController.totalProfsInProfessionsCorpus)
-
-router.route('/getRandomNumbers/:num')
-    .get(profController.fetchListOfRandomIntsWithinRange)
+router.route('/pushImageToRepository/:imageName')
+	.post(ImagesController.pushImage)
 
 module.exports = router;
