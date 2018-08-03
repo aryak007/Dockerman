@@ -73,9 +73,11 @@ function removeImageTag(req,res){
 
 function newTagForImage(req,res)
 {
-    var tagName = req.params.tagName
+    var tagName = req.body.tagName
     tagName = tagName.toLowerCase();
-    var imageName = req.params.imageName
+    var imageName = req.body.imageName
+    console.log("ImageName "+imageName)
+
     console.log("-------------Tagging image "+imageName+" with "+tagName+" ------------")
     exec('docker tag '+imageName+' '+tagName, (err, stdout, stderr) => {
         if (err) {

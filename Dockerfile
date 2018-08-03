@@ -4,9 +4,10 @@ RUN mkdir /app
 WORKDIR /app
 COPY package.json .
 
+COPY . /app
+
 RUN npm install
 
-COPY . /app
 
 EXPOSE 3000
 

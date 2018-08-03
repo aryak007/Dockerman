@@ -12,7 +12,7 @@ router.route('/deleteImage/:commitId')
 router.route('/deleteTag/:tagName')
 	.delete(ImagesController.removeImageTag)
 
-router.route('/tagImage/:imageName/:tagName')
+router.route('/tagImage/')
 	.post(ImagesController.newTagForImage)
 
 router.route('/pushImageToRepository/:imageName')
