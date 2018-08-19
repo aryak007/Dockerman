@@ -18,4 +18,6 @@ router.route('/tagImage/')
 router.route('/pushImageToRepository/:imageName')
 	.post(ImagesController.pushImage)
 
+router.route('/getParentIdList')
+	.get(ImagesController.getParentIdList)
 module.exports = router;
